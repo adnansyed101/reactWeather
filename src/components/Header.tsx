@@ -1,24 +1,22 @@
 import { BsFillCloudsFill } from "react-icons/bs";
-import { ChangeEvent, FormEvent, useState } from "react";
-import getWeatherData from "../weatherData";
+import { ChangeEvent, FormEvent } from "react";
 
-const Header = () => {
-  const [location, setLocation] = useState("London");
-  const [isFarenheit, setIsFarenheit] = useState(true);
+type HeaderProps = {
+  location: string;
+  isFarenheit: boolean;
+  handleLocation: (e: ChangeEvent<HTMLInputElement>) => void;
+  handleSubmit: (e: FormEvent) => void;
+  toggleFarenheit: () => void;
+};
 
-  const handleLocation = (e: ChangeEvent<HTMLInputElement>): void => {
-    setLocation(e.target.value);
-  };
-
-  const handleSubmit = (e: FormEvent) => {
-    e.preventDefault();
-    const degree = isFarenheit ? "imperial" : "metric";
-    getWeatherData(location, degree).then((data) => console.log(data));
-  };
-
-  const toggleFarenheit = (): void => {
-    setIsFarenheit((prev) => !prev);
-  };
+const Header = ({
+  location,
+  isFarenheit,
+  handleLocation,
+  handleSubmit,
+  toggleFarenheit,
+}: HeaderProps) => {
+  
 
   return (
     <header className="bg-slate-800 py-5">
