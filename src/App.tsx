@@ -1,24 +1,44 @@
 import Header from "./components/Header";
-import { useState, ChangeEvent, FormEvent } from "react";
+import {
+  useState,
+  ChangeEvent,
+  FormEvent,
+  useEffect,
+  useCallback,
+} from "react";
 import getWeatherData from "./weatherData";
+import ShowWeather from "./components/ShowWeather";
 
 function App() {
+  // eslint-disable-next-line @typescript-eslint/no-explicit-any
+  const [weatherData, setWeatherData] = useState<any>(undefined);
   const [location, setLocation] = useState("London");
   const [isFarenheit, setIsFarenheit] = useState(true);
+
+  const fetchWeatherData = useCallback(async () => {
+    const result = await getWeatherData("London", "imperial");
+    setWeatherData(result);
+  }, []);
+
+  useEffect(() => {
+    fetchWeatherData();
+  }, [fetchWeatherData]);
 
   const handleLocation = (e: ChangeEvent<HTMLInputElement>): void => {
     setLocation(e.target.value);
   };
 
-  const handleSubmit = (e: FormEvent) => {
+  const handleSubmit = async (e: FormEvent) => {
     e.preventDefault();
     const degree = isFarenheit ? "imperial" : "metric";
-    getWeatherData(location, degree).then((data) => console.log(data));
+    const result = await getWeatherData(location, degree);
+    setWeatherData(result);
   };
 
   const toggleFarenheit = (): void => {
     setIsFarenheit((prev) => !prev);
   };
+
   return (
     <div className="App">
       <Header
@@ -28,6 +48,7 @@ function App() {
         handleSubmit={handleSubmit}
         toggleFarenheit={toggleFarenheit}
       />
+      {weatherData && <ShowWeather data={weatherData} />}
     </div>
   );
 }
