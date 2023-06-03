@@ -16,11 +16,9 @@ const Header = ({
   handleSubmit,
   toggleFarenheit,
 }: HeaderProps) => {
-  
-
   return (
     <header className="bg-slate-800 py-5">
-      <div className="container mx-auto flex flex-col items-center space-y-3 md:space-x-0 lg:flex-row lg:space-x-10 lg:space-y-0">
+      <div className="header">
         <span className="flex items-center text-2xl text-white">
           <BsFillCloudsFill className="mr-2" />
           React Weather App
