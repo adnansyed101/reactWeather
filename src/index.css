@@ -5,3 +5,7 @@
 .header {
   @apply container mx-auto flex flex-col items-center space-y-3 md:space-x-0 lg:flex-row lg:space-x-10 lg:space-y-0;
 }
+
+.showWeather {
+  @apply container mx-auto w-full md:flex ;
+}
