@@ -8,7 +8,9 @@ const getWeatherData = async (location: string, degreetype: string) => {
 
     return weatherData;
   } catch (error) {
-    console.log(error);
+    if (typeof error === "string") {
+      throw new Error(error);
+    }
   }
 };
 
