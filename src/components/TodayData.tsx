@@ -32,19 +32,19 @@ const TodayData = ({ data }: TodayDataProps) => {
         <span className="border-b-2 lg:border-b-0">
           <p className="text-center text-xl text-slate-400">Humidity</p>
           <p className="text-center text-xl text-slate-200">
-            {list[0].main.humidity}
+            {list[0].main.humidity}&deg;
           </p>
         </span>
         <span className="border-b-2 lg:border-b-0">
           <p className="text-center text-xl text-slate-400">Wind Speed</p>
           <p className="text-center text-xl text-slate-200">
-            {list[0].wind.speed}
+            {list[0].wind.speed} kmph
           </p>
         </span>
         <span className="border-b-2 lg:border-b-0">
           <p className="text-center text-xl text-slate-400">Feels Like</p>
           <p className="text-center text-xl text-slate-200">
-            {list[0].main.feels_like}
+            {list[0].main.feels_like}&deg;
           </p>
         </span>
         <span className="border-b-2 lg:border-b-0">
@@ -68,7 +68,7 @@ const TodayData = ({ data }: TodayDataProps) => {
         <span className="border-b-2 lg:border-b-0">
           <p className="text-center text-xl text-slate-400">Wind Degree</p>
           <p className="text-center text-xl text-slate-200">
-            {list[0].wind.deg}
+            {list[0].wind.deg}&deg;
           </p>
         </span>
       </div>
