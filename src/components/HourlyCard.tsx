@@ -17,7 +17,7 @@ const HourlyCard = ({ hourlyCast }: HourlyCardProps) => {
           alt={weather[0].description}
         />
       </figure>
-      <p>{main.temp}</p>
+      <p>{main.temp}&deg;</p>
     </div>
   );
 };
