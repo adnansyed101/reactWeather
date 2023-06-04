@@ -8,6 +8,7 @@ import {
 } from "react";
 import getWeatherData from "./weatherData";
 import ShowWeather from "./components/ShowWeather";
+import TodayData from "./components/TodayData";
 
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -48,7 +49,12 @@ function App() {
         handleSubmit={handleSubmit}
         toggleFarenheit={toggleFarenheit}
       />
-      {weatherData && <ShowWeather data={weatherData} />}
+      {weatherData && (
+        <>
+          <ShowWeather data={weatherData} />
+          <TodayData data={weatherData}/>
+        </>
+      )}
     </div>
   );
 }
