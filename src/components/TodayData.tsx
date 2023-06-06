@@ -9,7 +9,7 @@ const TodayData = ({ data }: TodayDataProps) => {
   const { city, list } = data;
 
   return (
-    <div className="bg-slate-800">
+    <div className="bg-slate-800 py-4 my-5">
       <div className=" container mx-auto grid grid-cols-2 grid-rows-3 items-center justify-center gap-2 px-5 py-5 lg:grid-cols-5 lg:grid-rows-2">
         <span className="border-b-2 lg:border-b-0">
           <p className="text-center text-xl text-slate-400">Sunrise</p>
