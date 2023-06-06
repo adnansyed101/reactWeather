@@ -9,6 +9,7 @@ import {
 import getWeatherData from "./weatherData";
 import ShowWeather from "./components/ShowWeather";
 import TodayData from "./components/TodayData";
+import FiveDayForecast from "./components/FiveDayForecast";
 
 function App() {
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
@@ -53,6 +54,7 @@ function App() {
         <>
           <ShowWeather data={weatherData} />
           <TodayData data={weatherData}/>
+          <FiveDayForecast data={weatherData}/>
         </>
       )}
     </div>
