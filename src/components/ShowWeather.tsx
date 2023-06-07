@@ -19,7 +19,7 @@ const ShowWeather = ({ data }: ShowWeatherProps) => {
   return (
     <div className="my-4 px-4">
       <div className="showWeather">
-        <div className=" my-4 flex flex-col items-center px-10">
+        <div className=" my-4 flex flex-col items-center px-10 lg:w-2/4">
           <h3 className="text-2xl lg:text-3xl">{city.name}</h3>
           <h4 className="text-xl lg:text-2xl">{list[0].weather[0].main}</h4>
           <h1 className="my-2 text-4xl md:text-5xl">
